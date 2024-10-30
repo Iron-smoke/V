@@ -428,7 +428,7 @@ document.querySelectorAll('.skills-list__element').forEach(element => {
 function getSkillData(skill) {
   const skills = {
     html: {
-      image: "\\icons\\html2.png",
+      image: "icons/html2.png",
       name: "HTML",
       description: "Язык разметки, который отвечает за структуру\n" +
         "                  и логическую организацию веб-страницы,\n" +

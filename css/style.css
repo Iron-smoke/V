@@ -44,6 +44,12 @@ body {
 }
 html, body { /* Отключаем горизонтальный скролл */
 }
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden; /* Отключение горизонтального скролла на мобильных */
+  }
+}
+
 
 .header {
     position: relative;
@@ -77,7 +83,10 @@ html, body { /* Отключаем горизонтальный скролл */
 #hamburger, .menu-hamburger {
     display: none;
 }
-
+.menu-hamburger.active {
+  display: block ; /* Показываем меню, когда оно активно */
+  /* Или используем transform: translateX(0); если меню выезжает */
+}
 .header-top {
     position: sticky;
     top: 0;

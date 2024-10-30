@@ -599,4 +599,28 @@ function getSkillData(skill) {
   };
   return skills[skill];
 }
+const hamburger = document.querySelector('.hamburger');
+const menu = document.querySelector('.menu');
 
+// Функция для скрытия меню
+function hideMenu() {
+  console.log('Скрываем меню'); // Лог для отслеживания
+  menu.classList.remove('open');
+}
+
+// Таймер
+const hamburgerCheckbox = document.getElementById("hamburger");
+
+// Функция, которая снимет галочку после 3 секунд
+function autoCloseMenu() {
+  setTimeout(() => {
+    hamburgerCheckbox.checked = false;
+  }, 3000); // 3000 миллисекунд = 3 секунды
+}
+
+// Слушаем изменения на checkbox
+hamburgerCheckbox.addEventListener("change", () => {
+  if (hamburgerCheckbox.checked) {
+    autoCloseMenu(); // Запускаем таймер только если меню открывается
+  }
+});

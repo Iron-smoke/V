@@ -34,7 +34,7 @@
 /* Header стили */
 body {
   font-family: 'Vollkorn', serif;
-  background:url("back.jpg") ;
+  background: url("back.jpg") ;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

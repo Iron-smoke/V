@@ -391,8 +391,6 @@
         width: 95%;
         top: 0;
         gap: 80px;
-
-
     }
 
     .work-element__animation {
@@ -403,7 +401,6 @@
         width: 100%;
         bottom: 0 !important;
         background: #fff;
-      flex-wrap: wrap;
     }
 
     .work-element.left:before,
@@ -445,69 +442,4 @@
         width: 100%;
         max-width: 100%;
     }
-
 }
-@media (max-width: 768px) {
-
-  .work-element__skills {
-    align-items: flex-end; /* Выравнивание элементов по нижнему краю */
-    flex-wrap: wrap;
-    border-radius: 10px;
-    color: #fff;
-    cursor: default;
-    display: inline-flex;
-    font-size: 1em;
-    justify-content: center;
-    margin-bottom: -40px;
-    margin-right: 5px;
-    padding: 5px 10px;
-    transition: background-color .25s ease;
-    position: relative;
-
-  }
-
-  .work-element__skills-element {
-    flex: 1 1 48%; /* Занимать не менее 48% контейнера, но не более 100% */
-    margin: 1px; /* Небольшой отступ для создания пространства между элементами */
-    text-align: center; /* Выравнивание текста по центру */
-  }
-
-  /* Уменьшаем размеры текста в тултипах, чтобы они не занимали много места */
-    .work-tooltip {
-      position: absolute; /* Позиционирование относительно родителя */
-      top: 100%; /* Позиционируем ниже основного контента */
-      left: 50%;
-      right: 100px;
-      bottom: 10px;
-      transform: translateX(-50%); /* Сдвигаем, чтобы tooltip оказался по центру */
-      max-width: 55vw; /* Ограничим ширину, чтобы он точно влезал */
-      z-index: 10;
-    }
-  .work-element__projects .work-tooltip {
-    top: calc(100% - 20px); /* Сдвигаем вверх. Увеличь значение, если нужно выше */
-    left: 100%; /* Сдвигаем вправо. Увеличь значение для большего сдвига */
-    transform: translateX(100%); /* Тонкая настройка для центрирования */
-    width: 400px; /* Ширина tooltip */
-    bottom: auto;
-    position: absolute; /* Убедись, что позиционирование абсолютное */
-  }
-
-  .work-element__skills-element:hover .work-tooltip,
-  .work-project:hover .work-tooltip,
-  .work-element__projects-element:hover .work-tooltip,
-  .work-project__title:hover + .work-tooltip {
-    transform: translateX(-50%) translateY(-10px); /* Поднимаем чуть выше */
-    flex-basis: 100%;
-  }
-}
-@media (max-width: 768px) {
-
-  .skills-filters {
-    gap: 1px;
-    font-size: 16px;
-    margin-bottom: 30px;
-    margin-left: 20px;
-
-  }
-}
-

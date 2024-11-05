@@ -12,7 +12,7 @@
 
     --background-black-opacity: rgb(0, 0, 0, .7);
     --background-light-black-opacity: rgb(0, 0, 0, .5);
-    --background-grey: rgba(51, 51, 51, 0.3);
+    --background-grey: rgba(218, 218, 218, 0.3);
 
     --box-shadow-color: 0 0 10px rgb(0 0 0 / 0.3);
 
@@ -1323,10 +1323,15 @@ input[name="skills-filter-radio"]:nth-of-type(5):checked ~ .skills-wrapper:nth-o
     margin-bottom: 8px;
 }
 
-.work-element__projects, .work-element__skills {
+.work-element__projects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.work-element__skills {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
 }
 
 .work-element__projects {
@@ -1335,7 +1340,7 @@ input[name="skills-filter-radio"]:nth-of-type(5):checked ~ .skills-wrapper:nth-o
 
 .work-element__projects-element, .work-element__skills-element {
     padding: 5px 10px;
-    border-radius: 40px;
+    border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.5);
     transition: background-color .25s ease;
     border: 1px solid rgb(117, 111, 111);
@@ -1820,5 +1825,45 @@ a.link:hover::before {
 .menu-element a.link {
   /* Основное состояние */
 }
+.footer-link {
+  color: var(--color-green); /* Базовый цвет */
+  fill: var(--color-green); /* Цвет для SVG-элементов */
+  text-decoration: none; /* Убираем подчеркивание */
+  font-weight: bold; /* Жирный шрифт для выделения */
+  position: relative; /* Для работы с псевдоэлементами */
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  display: inline-flex; /* Чтобы ограничить область иконкой */
+  align-items: center;
+  justify-content: center;
+  padding: 0; /* Убираем отступы, чтобы они не увеличивали область */
+  width: 70px; /* Задаем фиксированный размер, соответствующий иконке */
+  height:70px;
+  border-radius: 50%; /* Скругление для границ */
+  overflow: hidden; /* Обрезка заливки по границе круга */
+}
 
+.footer-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-green); /* Цвет заливки */
+  z-index: -1; /* Заливка под текстом */
+  opacity: 0; /* По умолчанию заливка прозрачна */
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transform: scale(0); /* Исходное состояние - заливка скрыта */
+  border-radius: 50%; /* Закругляем углы */
+}
+
+.footer-link:hover {
+  color: var(--color-white); /* Цвет текста меняется на белый при наведении */
+  transform: scale(1.1); /* Слегка увеличиваем текст при наведении */
+}
+
+.footer-link:hover::before {
+  opacity: 0.9; /* Заливка становится видимой */
+  transform: scale(1); /* Заливка плавно появляется */
+}
 

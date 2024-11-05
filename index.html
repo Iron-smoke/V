@@ -25,6 +25,12 @@
             margin: 0;
             padding: 0;
             overflow-x: hidden;
+          filter: brightness(1.1);
+        }
+        @media (max-width: 768px) { /* Указываешь нужный тебе брейкпойнт */
+          body {
+            filter: brightness(1.2); /* Увеличивает яркость фона, 1.0 - исходное значение */
+          }
         }
     </style>
     <input class="checkbox" type="checkbox" name="hamburger" id="hamburger" />
@@ -1376,14 +1382,19 @@
     <footer class="footer" id="footer">
         <ul class="socials">
             <li class="social-element"  >
-                <a href="https://vk.com/smokemann" target="_blank" class="link social-element__link block-center">
-                  <img src="images/vk.png" alt="vk">
-                </a>
+              <a href="https://vk.com/smokemann" target="_blank" class="footer-link block-center">
+                <img src="images/vk.png" alt="vk">
+              </a>
             </li>
-            <li class="social-element">
-                <a href="https://t.me/Diablory_Smoke" target="_blank" class="link social-element__link block-center">
-                  <img src="icons/t.png" alt="tg">
-                </a>
+          <li class="social-element">
+            <a href="https://t.me/Diablory_Smoke" target="_blank" class="footer-link block-center">
+              <img src="icons/t.png" alt="tg">
+            </a>
+            </li>
+          <li class="social-element">
+            <a href="https://github.com/iron-smoke" target="_blank" class="footer-link block-center">
+              <img src="images/g.png" alt="tg">
+            </a>
             </li>
         </ul>
 

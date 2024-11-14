@@ -1,0 +1,345 @@
+
+
+.mouse .skills {
+  padding: 60px 0 40px;
+
+}
+.skills-filters-mouse {
+  display: grid;
+  grid-template-columns: repeat(3, 2fr); /* Разделение на 2 колонки */
+  grid-gap: 1px; /* Расстояние между колонками */
+  width: 100%; /* Ширина контейнера */
+  padding: 10px; /* Паддинг вокруг содержимого контейнера */
+}
+
+.skill-filter-mouse {
+  font-size: 30px;
+  color: #ff0000;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-right: 15px;
+  transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+  cursor: pointer;
+  text-shadow: 1px 1px 5px rgb(255, 255, 255); /* Легкая тень для объема */
+  text-align: center; /* Центрирование текста */
+  display: flex; /* Применение flex для контейнера */
+  align-items: center; /* Вертикальное центрирование */
+  justify-content: center; /* Горизонтальное центрирование */
+  width: 100%; /* Ширина элемента по ширине контейнера */
+}
+
+.mouse .skill-filter:hover {
+  color: #ffffff; /* Цвет при наведении */
+  transform: scale(1.15); /* Легкое увеличение */
+  text-shadow: 1px 1px 10px rgb(255, 255, 255); /* Усиленное свечение */
+}
+
+.mouse .skills-wrapper {
+  display: none;
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  min-height: 650px;
+}
+
+.mouse .skills-wrapper .left {
+  flex: 1 1 70%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 20px;
+
+  max-width: 70%;
+  padding-right: 20px;
+}
+
+.mouse .skills-list__row {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  width: 100%;
+}
+
+.mouse .skills-list__element-image {
+  width: 40px; /* Задаем ширину иконки */
+  height: auto; /* Высота изменяется пропорционально ширине */
+  margin-right: 50px; /* Отступ справа для разделения текста и иконки */
+  position: sticky;
+
+
+}
+
+.mouse .skills-list__element {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start !important;
+  flex: 1 1 30%;
+  max-width: 30%;
+  min-height: 70px;
+  margin: 4px;
+  padding: 15px;
+  background: linear-gradient(120deg, rgba(253, 245, 230, 1), rgba(250, 250, 210, 1));
+  box-shadow: 10px 10px 25px rgba(200, 200, 200, 0.6), -10px -10px 25px rgba(200, 200, 200, 0.6);
+  border-radius: 30px; /* Закругленные края */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* Плавные эффекты при наведении */
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(30px);
+}
+.mouse .skills-list__element.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.mouse .skills-list__element:hover {
+  transform: scale(1.1);
+  box-shadow: 10px 10px 25px rgba(200, 200, 200, 0.6), -10px -10px 25px rgba(200, 200, 200, 0.6);
+  background: linear-gradient(145deg, rgb(209, 151, 37), rgba(218, 218, 218, 0.3), rgb(255, 255, 255));
+  filter: brightness(1.05);
+}
+@media (max-width: 768px) {
+  .mouse .skill-filter {
+    font-size: 20px;
+    color: #ffffff;
+    font-weight: normal;
+    text-shadow: none;
+    transition: none;
+    transform: none;
+  }
+
+  .mouse .skill-filter.active {
+    color: #4d21bc;
+    font-weight: normal;
+    text-shadow: 0px 0px 10px rgba(77, 33, 188, 1);;
+  }
+
+  .mouse .skill-filter.active:hover {
+    transform: none;
+    text-shadow: none;
+  }
+}
+.mouse .skills-list__element:active {
+  transform: scale(0.98); /* Небольшое сжатие при нажатии */
+  box-shadow: 4px 4px 15px rgb(0, 0, 0), -4px -4px 15px rgb(0, 0, 0); /* Уменьшение тени */
+}
+.mouse .skills-list__element:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgb(255, 255, 255); /* Подсветка вокруг элемента */
+  animation: pulseEffect 1.5s infinite;
+}
+@keyframes pulseEffect {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+}
+.mouse .skills-list__element > *:first-child {
+  flex: 1 1 25%;
+  max-width: 55px;
+  padding-right: 10px;
+}
+
+.mouse .skills-list__element > *:last-child {
+  flex: 1 1 75%;
+  font-size: 30px; /* Чуть уменьшенный текст для элегантности */
+  display: flex;
+  font-weight: bold;
+  align-items: center; /* Центрирует текст по вертикали */
+  justify-content: center;
+  margin-left: -50px;
+  color: #000000;
+}
+.mouse .skills-list__element:active {
+  transform: scale(0.98); /* Небольшое сжатие при нажатии */
+  box-shadow: 2px 2px 8px rgba(255, 255, 255, 0.15), -2px -2px 8px rgba(255, 255, 255, 0.2); /* Уменьшение тени */
+}
+.mouse .skills-list__element.highlight {
+  position: relative;
+  overflow: hidden;
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.mouse .skills-list__element.highlight {
+  position: relative;
+  overflow: hidden;
+  transform: scale(1.1);
+  transition: transform 1.5s cubic-bezier(0.4, 0, 0.2, 1); /* Длинный переход для плавности */
+  box-shadow: 0 0 15px rgb(95, 54, 211);
+  animation: smoothGlow 8s infinite ease-in-out; /* Плавный бесконечный цикл */
+}
+
+/* Анимация плавного, непрерывного свечения */
+@keyframes smoothGlow {
+  0% {
+    box-shadow: 0 0 10px rgba(172, 56, 220, 0.3), 0 0 20px rgba(172, 56, 220, 0.2), 0 0 30px rgba(172, 56, 220, 0.1);
+    transform: scale(1.1); /* Начальное лёгкое увеличение */
+    opacity: 0.85;
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(220, 56, 172, 0.6), 0 0 40px rgba(220, 56, 172, 0.4), 0 0 50px rgba(220, 56, 172, 0.3); /* Максимальное свечение в середине */
+    transform: scale(1.15); /* Максимальное увеличение */
+    opacity: 1; /* Полная непрозрачность в середине */
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(172, 56, 220, 0.3), 0 0 20px rgba(172, 56, 220, 0.2), 0 0 30px rgba(172, 56, 220, 0.1);
+    transform: scale(1.1); /* Возвращение к начальной величине */
+    opacity: 0.85;
+  }
+}
+
+
+
+.mouse .skills-wrapper .right {
+  flex: 1 1 28%;
+  max-width: 28%;
+  padding: 20px;
+  background: linear-gradient(120deg, rgba(253, 245, 230, 1), rgba(250, 250, 210, 1));
+  border-left: 1px solid rgb(0, 0, 0); /* Полупрозрачный разделитель */
+  border-radius: 30px; /* Более закругленные края */
+  box-shadow: 10px 10px 25px rgba(200, 200, 200, 0.6), -10px -10px 25px rgba(200, 200, 200, 0.6);
+  transition: box-shadow 0.3s ease, background 0.3s ease, transform 0.3s ease; /* Добавлен плавный переход для масштаба */
+  margin-left: auto;
+}
+.mouse .skills-wrapper .right:hover {
+  box-shadow: 10px 10px 25px rgba(200, 200, 200, 0.6), -10px -10px 25px rgba(200, 200, 200, 0.6);
+  background: linear-gradient(145deg, rgb(209, 151, 37), rgba(218, 218, 218, 0.3), rgb(255, 255, 255));
+  transform: scale(1.05); /* Легкое увеличение для более плавного эффекта */
+}
+
+.mouse .skill-card__title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  color: #000000;
+  font-size: 24px; /* Увеличенный размер шрифта для большей заметности */
+  text-shadow: 1px 1px 5px rgb(0, 0, 0); /* Легкая тень для текста */
+}
+
+
+.mouse .skill-card__image {
+  flex: 1 1 30%;
+  width: 80px; /* Уменьшим размер изображения */
+  margin-right: 10px;
+}
+
+
+.mouse .skill-card__name {
+  flex: 1 1 70%;
+  font-size: 26px;
+  font-weight: bold;
+  color: #000000;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-left: 50px;
+  text-shadow: 0 0 8px rgb(255, 255, 255); /* Подсветка для текста */
+}
+
+.mouse .skill-card__progress {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.05); /* Легкий фон для акцента */
+  border-radius: 8px;
+  box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.5); /* Внутренняя тень */
+}
+.highlight {
+  background-color: rgb(255, 0, 0,1); /* Пример эффекта подсветки */
+  transition: background-color 0.3s ease;
+}
+.mouse .skill-card__progress-percent {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 1px 1px 5px rgba(77, 33, 188, 0.7); /* Тень для акцентного текста */
+}
+
+.mouse .skill-card__progress-bar {
+  position: relative;
+  background: rgb(255, 255, 255);
+  border-radius: 20px;
+  width: 100%;
+  height: 10px;
+  margin-top: 5px;
+  overflow: hidden;
+}
+.mouse .skill-card__progress-bar div {
+  width: 85%;
+  height: inherit;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.6), #3b3b3c, #737373, #bdbdbd); /* Плавный переход цвета для прогресса */
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgb(0, 0, 0); /* Легкое свечение на прогрессе */
+}
+
+.mouse .skill-card__description {
+  color: #e0e0e0;
+  text-align: justify;
+  line-height: 1.5;
+  font-size: 16px;
+  margin-top: 10px;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.4); /* Легкий фон для контраста */
+  border-radius: 8px;
+  box-shadow: inset 2px 2px 5px rgb(255, 255, 255); /* Мягкая внутренняя тень */
+  transition: background 0.3s ease;
+}
+.gogs .skill-card__description:hover {
+  background: rgba(20, 20, 20, 0.6); /* Слегка темнее при наведении */
+}
+input[name="mouse-skills-filter-radio"] {
+  display: none;
+}
+
+input[name="mouse-skills-filter-radio"]:nth-of-type(1):checked ~ .skills-filters .skill-filter:nth-of-type(1),
+input[name="mouse-skills-filter-radio"]:nth-of-type(2):checked ~ .skills-filters .skill-filter:nth-of-type(2),
+input[name="mouse-skills-filter-radio"]:nth-of-type(3):checked ~ .skills-filters .skill-filter:nth-of-type(3),
+input[name="mouse-skills-filter-radio"]:nth-of-type(4):checked ~ .skills-filters .skill-filter:nth-of-type(4),
+input[name="mouse-skills-filter-radio"]:nth-of-type(5):checked ~ .skills-filters .skill-filter:nth-of-type(5),
+input[name="mouse-skills-filter-radio"]:nth-of-type(6):checked ~ .skills-filters .skill-filter:nth-of-type(6),
+input[name="mouse-skills-filter-radio"]:nth-of-type(7):checked ~ .skills-filters .skill-filter:nth-of-type(7),
+input[name="mouse-skills-filter-radio"]:nth-of-type(8):checked ~ .skills-filters .skill-filter:nth-of-type(8),
+input[name="mouse-skills-filter-radio"]:nth-of-type(9):checked ~ .skills-filters .skill-filter:nth-of-type(9)
+{
+  color: #ffffff;
+}
+
+input[name="mouse-skills-filter-radio"]:nth-of-type(1):checked ~ .skills-wrapper:nth-of-type(2),
+input[name="mouse-skills-filter-radio"]:nth-of-type(2):checked ~ .skills-wrapper:nth-of-type(3),
+input[name="mouse-skills-filter-radio"]:nth-of-type(3):checked ~ .skills-wrapper:nth-of-type(4),
+input[name="mouse-skills-filter-radio"]:nth-of-type(4):checked ~ .skills-wrapper:nth-of-type(5),
+input[name="mouse-skills-filter-radio"]:nth-of-type(5):checked ~ .skills-wrapper:nth-of-type(6),
+input[name="mouse-skills-filter-radio"]:nth-of-type(6):checked ~ .skills-wrapper:nth-of-type(7),
+input[name="mouse-skills-filter-radio"]:nth-of-type(7):checked ~ .skills-wrapper:nth-of-type(8),
+input[name="mouse-skills-filter-radio"]:nth-of-type(8):checked ~ .skills-wrapper:nth-of-type(9),
+input[name="mouse-skills-filter-radio"]:nth-of-type(9):checked ~ .skills-wrapper:nth-of-type(10)
+
+{
+  display: flex;
+}
+@media (max-width: 768px) {
+  .mouse .skill-card {
+    display: none !important; /* Скрываем карточку на мобильной версии */
+  }
+}
